@@ -8,6 +8,7 @@ const {
   decrby,
   exists,
   setnx,
+  addDelayEventOrder,
 } = require("../models/Limited");
 
 const UserCtrl = {
@@ -136,6 +137,16 @@ const UserCtrl = {
       msg: "success",
       Time,
     });
+  },
+  DeleteOrderDelayEvent: async (req, res) => {
+    try {
+      const { userId, order } = req.body;
+      await addDelayEventOrder({ orderId: order.id, delay: 5 });
+      res.json({
+        status: "success",
+        msg: order,
+      });
+    } catch (error) {}
   },
 };
 module.exports = UserCtrl;

@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-
+app.use(express.json());
 //!router import
 const Users = require("./Routes/UserRoute");
 
