@@ -1,0 +1,9 @@
+GET http://localhost:5000/api/user/userSpam
+
+###
+
+GET http://localhost:5000/api/user/manyUserGoods
+
+###
+
+GET http://localhost:5000/api/user/manyUserGoodsC2
