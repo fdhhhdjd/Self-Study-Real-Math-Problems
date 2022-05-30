@@ -1,7 +1,7 @@
 const IOREDIS = require("ioredis");
 const REDIS = new IOREDIS({
-  port: 6379,
-  host: "127.0.0.1",
+  port: process.env.REDIS_PORT,
+  host: process.env.REDIS_HOST,
 });
 
 REDIS.on("connect", () => {
