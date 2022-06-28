@@ -4,6 +4,7 @@ export const LogicSpliceString = (myString) => {
   var results1 = ["day1", "day2", "day3"];
   for (var i = 0; i < myString.length; i += 3) {
     results.push(myString.slice(i, i + 3));
+    console.log(results);
   }
   var ketqua = results1.map((item, value) => {
     return {

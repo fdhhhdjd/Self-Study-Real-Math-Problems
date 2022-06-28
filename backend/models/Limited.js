@@ -86,6 +86,15 @@ const addDelayEventOrder = ({ orderId, delay }) => {
     });
   });
 };
+
+const setNoEx = async (key, count) => {
+  return new Promise((resolve, reject) => {
+    REDIS.set(key, count, (err, result) => {
+      if (err) return reject(err);
+      resolve(result);
+    });
+  });
+};
 module.exports = {
   //userSpam
   incr,
@@ -100,4 +109,6 @@ module.exports = {
   setnx,
   //Delete order khoong chiu dat hang
   addDelayEventOrder,
+
+  setNoEx,
 };
