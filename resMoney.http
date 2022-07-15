@@ -1,0 +1,18 @@
+POST http://localhost:5000/api/transaction/user
+Content-Type: application/json
+
+{
+    "userId":2,
+    "amount":10
+}
+
+###
+
+POST http://localhost:5000/api/transfer/user
+Content-type: application/json
+
+{
+    "fromId":1,
+    "toId":2,
+    "amount":10
+}
