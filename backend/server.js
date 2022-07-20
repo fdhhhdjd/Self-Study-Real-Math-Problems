@@ -23,6 +23,7 @@ const TransactionCtrlRoute = require("./Routes/TransactionRoute");
 const DownloadVideoRoute = require("./Routes/DownloadVideoRoute");
 const Upload = require("./Routes/UploadRoute");
 const GetLink = require("./Routes/GetLink");
+const EcommerceRoute = require("./Routes/EcommerceRoute");
 
 //!Link router Main
 app.use("/api/user", Users);
@@ -31,6 +32,7 @@ app.use("/api", DownloadVideoRoute);
 app.use("/api", TransactionCtrlRoute);
 app.use("/api", Upload);
 app.use("/backend/Assets", GetLink);
+app.use("/api/ecommerce", EcommerceRoute);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT);

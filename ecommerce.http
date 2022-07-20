@@ -1,0 +1,36 @@
+### post product
+
+PUT http://localhost:5000/api/ecommerce/product
+Content-Type: application/json
+
+{
+    "product":{
+        "productId": 1001,
+        "code": "P-1001",
+        "name": "Book about Cr7",
+        "brand": "amazon",
+        "description": "description Book about Cr7",
+        "specs": [
+            {
+                "k":"author",
+                "v":"cr7"
+            },
+            {
+                "k":"pages",
+                "v":300
+            }
+                 ]
+    }
+}
+
+### post
+PUT http://localhost:5000/api/ecommerce/inventory
+Content-Type: application/json
+
+{
+    "inventory ":{
+        "productId":1001,
+        "quantity":1000,
+        "reservations":[]
+    }
+}

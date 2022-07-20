@@ -44,9 +44,10 @@ const Home = () => {
     console.log(KeyGeneralB);
     console.log(KeyGeneralA === KeyGeneralB);
   };
+
   useEffect(() => {
     //?Study 1
-    handleSpliceString();
+    // handleSpliceString();
     //?Study 2
     // handleTowArray();
     //?Study 3
