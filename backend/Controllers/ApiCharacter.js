@@ -1,17 +1,5 @@
 const { default: axios } = require("axios");
-const {
-  incr,
-  expire,
-  ttl,
-  get,
-  set,
-  incrby,
-  decrby,
-  exists,
-  setnx,
-  addDelayEventOrder,
-  setNoEx,
-} = require("../models/Limited");
+const { get, set, setNoEx } = require("../models/Limited");
 
 const ApiCharacterCtrl = {
   GetAllCharacter: async (req, res, next) => {

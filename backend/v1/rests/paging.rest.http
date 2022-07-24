@@ -1,0 +1,19 @@
+POST http://localhost:5000/api/comments
+Content-Type: application/json
+
+{
+
+    "blogId":1,
+    "commentId":0,
+    "name":"Nguyen Tien Tai",
+    "email":"nguyentientai10@gmail.com",
+    "body":"Content... so great!"
+}
+
+###
+POST http://localhost:5000/api/commentMany
+Content-Type: application/json
+
+{
+
+}
