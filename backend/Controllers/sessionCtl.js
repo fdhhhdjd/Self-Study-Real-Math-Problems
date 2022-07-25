@@ -10,5 +10,8 @@ const SessionsCtl = {
     };
     res.send("set Oke");
   },
+  destroySessions: async (req, res) => {
+    req.session.destroy();
+  },
 };
 module.exports = SessionsCtl;

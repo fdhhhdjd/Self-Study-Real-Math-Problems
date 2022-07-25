@@ -17,3 +17,27 @@ Content-Type: application/json
 {
 
 }
+
+###
+GET http://localhost:5000/api/list?blogId=1&page=2&pagesize=50
+Content-Type: application/json
+
+{
+
+}
+
+
+
+
+/// HackNew
+
+###
+GET http://localhost:5000/api/listhacknews?commentId=30&pagesize=50
+Content-Type: application/json
+
+{
+
+}
+
+
+
