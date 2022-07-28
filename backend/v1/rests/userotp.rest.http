@@ -1,0 +1,20 @@
+POST http://localhost:5000/api/v1/register
+Content-Type: application/json
+
+{
+
+    "email":"nguyentientai8@gmail.com"
+  
+}
+
+
+
+POST http://localhost:5000/api/v1/otp
+Content-Type: application/json
+
+{
+
+    "email":"nguyentientai10@gmail.com",
+    "otp":""
+  
+}

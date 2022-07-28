@@ -32,7 +32,7 @@ Content-Type: application/json
 /// HackNew
 
 ###
-GET http://localhost:5000/api/listhacknews?commentId=30&pagesize=50
+GET http://localhost:5000/api/listhacknews?commentId=2&pagesize=50
 Content-Type: application/json
 
 {
