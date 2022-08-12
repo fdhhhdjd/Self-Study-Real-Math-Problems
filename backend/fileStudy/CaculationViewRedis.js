@@ -19,3 +19,5 @@ async function playVideo(videoID, userId) {
   } catch (error) {}
 }
 playVideo(1001, 102);
+//!lấy ip
+// !getRemoteAddr()
