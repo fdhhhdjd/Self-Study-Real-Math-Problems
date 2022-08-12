@@ -9,6 +9,8 @@ const EventEmitter = require("events");
 let redisClient = new Redis();
 const myEvent = new EventEmitter();
 const connectDB = require("./configs/db");
+// require("./fileStudy/index");
+require("./fileStudy/CaculationViewRedis");
 connectDB();
 const app = express();
 // app.set("trust proxy", 1);
@@ -55,8 +57,10 @@ myEvent.once("geterror", (err, err2) => {
 //   );
 // }, 2000);
 //Chuyển đổi kiểu dữ liệu
+
 const typeOf = (value) => Object.prototype.toString.call(value).slice(8, -1);
-console.log(typeOf([]));
+// console.log(typeOf([]));
+
 //!router import
 const User = require("./Routes/UserRoute");
 const ApiCharacterRoute = require("./Routes/ApiCharacterRoute");
