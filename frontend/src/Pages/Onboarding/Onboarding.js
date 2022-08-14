@@ -16,6 +16,10 @@ class TestIntro extends Component {
           element: ".world",
           intro: "Ôi thế bạn cần sự trợ giúp gì nào ?",
         },
+        {
+          element: "#hello1",
+          intro: "Go Go Go Go ?",
+        },
       ],
       hintsEnabled: false,
       hints: [
@@ -38,20 +42,25 @@ class TestIntro extends Component {
 
   render() {
     return (
-      <header className="App-header">
-        <div>
-          <Steps
-            enabled={this.state.stepsEnabled}
-            steps={this.state.steps}
-            initialStep={this.state.initialStep}
-            onExit={this.onExit}
-          />
-          <button class="world" onClick={this.toggleSteps}>
-            Start Tutorial
-          </button>
-          <button id="hello">Login Page</button>
-        </div>
-      </header>
+      <div className="App">
+        <header className="App-header">
+          <div>
+            <Steps
+              enabled={this.state.stepsEnabled}
+              steps={this.state.steps}
+              initialStep={this.state.initialStep}
+              onExit={this.onExit}
+              ref={(steps) => (this.steps = steps)}
+            />
+            <button class="world" onClick={this.toggleSteps}>
+              Start Tutorial
+            </button>
+            <button id="hello">Login Page</button>
+
+            <button id="hello1">Meo Meo</button>
+          </div>
+        </header>
+      </div>
     );
   }
 }
