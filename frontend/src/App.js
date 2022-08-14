@@ -4,6 +4,7 @@ import Cropper from "./Pages/Cropper/Cropper";
 import DownLoad from "./Pages/DownLoad/DownLoad";
 import Home from "./Pages/Home";
 import MultiplePicture from "./Pages/MultipePicture/MultiplePicture";
+import Onboarding from "./Pages/Onboarding/Onboarding";
 const App = () => {
   return (
     <React.Fragment>
@@ -16,6 +17,8 @@ const App = () => {
         <Route path="/multiple" element={<MultiplePicture />} />
         //! Cropper Image
         <Route path="/crop" element={<Cropper />} />
+        //!React-User-Onboarding
+        <Route path="/onboard" element={<Onboarding />} />
       </Routes>
     </React.Fragment>
   );
