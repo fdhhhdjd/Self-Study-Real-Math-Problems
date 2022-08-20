@@ -22,6 +22,7 @@ export const LogicAddTowArray = (arr1, arr2) => {
     return {
       id: item,
       value: arr2[value],
+      // ["id" + " " + item]: b[key],
     };
   });
   return d;

@@ -21,6 +21,7 @@
     "express-session": "^1.17.3",
     "image-downloader": "^4.3.0",
     "ioredis": "^5.2.2",
+    "jsonwebtoken": "^8.5.1",
     "mime": "^3.0.0",
     "mongoose": "^6.4.1",
     "multer": "^1.4.5-lts.1",

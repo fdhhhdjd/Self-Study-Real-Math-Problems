@@ -72,6 +72,7 @@ const EcommerceRoute = require("./Routes/EcommerceRoute");
 const CommentRoute = require("././v1/routes/comment.route");
 const sessionRoute = require("./Routes/SessionsRoute");
 const userOtpRoute = require("./v1/routes/userotp.route");
+const jwtUserRedis = require("./Routes/JwtUserRedis");
 //!Link router Main
 app.use("/api/user", User);
 app.use("/api/user", ApiCharacterRoute);
@@ -83,6 +84,7 @@ app.use("/api/ecommerce", EcommerceRoute);
 app.use("/api", CommentRoute);
 app.use("/api", sessionRoute);
 app.use("/api/v1", userOtpRoute);
+app.use("/api", jwtUserRedis);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT);
