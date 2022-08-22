@@ -27,3 +27,33 @@ export const LogicAddTowArray = (arr1, arr2) => {
   });
   return d;
 };
+//Sort increase
+export const HandleIncreaseSort = () => {
+  const array = [0, 25, 9, 6, 8, 5, 7, 1, 16];
+  var tempt;
+  for (let i = 0; i < array.length; i++) {
+    for (let j = i + 1; j < array.length; j++) {
+      if (array[j] > array[i]) {
+        tempt = array[j];
+        array[j] = array[i];
+        array[i] = tempt;
+      }
+    }
+  }
+  // console.log(array);
+};
+//Sort increase
+export const HandleDecreaseSort = () => {
+  const array = [0, 25, 9, 6, 8, 5, 7, 1, 16];
+  var tempt;
+  for (let i = 0; i < array.length; i++) {
+    for (let j = i + 1; j < array.length; j++) {
+      if (array[j] < array[i]) {
+        tempt = array[j];
+        array[j] = array[i];
+        array[i] = tempt;
+      }
+    }
+  }
+  // console.log(array);
+};
