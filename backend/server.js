@@ -3,6 +3,7 @@ const responseTime = require("response-time");
 const dotenv = require("dotenv");
 const cors = require("cors");
 var session = require("express-session");
+const passport = require("passport");
 const Redis = require("ioredis");
 let RedisStore = require("connect-redis")(session);
 const EventEmitter = require("events");
@@ -18,7 +19,7 @@ const app = express();
 app.use(
   session({
     store: new RedisStore({ client: redisClient }),
-    secret: "keyboard cat",
+    secret: process.env.KEY_SESSION,
     //!đặt lại session hoặc cookie theo mỗi yêu cầu sảy ra
     resave: false,
     //! bất kì co session hoặc cookie khi có yêu cầu sẽ được đánh dấu bởi connect
@@ -33,6 +34,13 @@ app.use(
 app.use(responseTime());
 app.use(express.json());
 app.use(cors());
+
+//PassPort
+//passport
+// Init passport authentication
+app.use(passport.initialize());
+// persistent login sessions
+app.use(passport.session());
 app.get("/", (req, res) => {
   const healthcheck = {
     uptime: process.uptime(),
@@ -73,6 +81,10 @@ const CommentRoute = require("././v1/routes/comment.route");
 const sessionRoute = require("./Routes/SessionsRoute");
 const userOtpRoute = require("./v1/routes/userotp.route");
 const jwtUserRedis = require("./Routes/JwtUserRedis");
+
+//PassPort
+const PassPort = require("./Routes/PassportRoute/PassportRoute");
+
 //!Link router Main
 app.use("/api/user", User);
 app.use("/api/user", ApiCharacterRoute);
@@ -85,6 +97,7 @@ app.use("/api", CommentRoute);
 app.use("/api", sessionRoute);
 app.use("/api/v1", userOtpRoute);
 app.use("/api", jwtUserRedis);
+app.use("/api/passport", PassPort);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT);

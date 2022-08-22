@@ -1,0 +1,11 @@
+POST http://localhost:5000/api/passport/login
+Content-Type: application/json
+
+{
+ "username":"taidev",
+ "password":"123"
+}
+
+
+###
+GET http://localhost:5000/api/passport/profile
