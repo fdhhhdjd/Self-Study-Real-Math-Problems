@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-md5/2.19.0/js/md5.min.js"
+      integrity="sha512-8pbzenDolL1l5OPSsoURCx9TEdMFTaeFipASVrMYKhuYtly+k3tcsQYliOEKTmuB1t7yuzAiVo+yd7SJz+ijFQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+  </head>
+  <body>
+    <script>
+      const keyToken = "xxxxYYYY";
+      const getRandomNonce = (num) => {
+        return Math.floor(
+          Math.random() +
+            Math.floor(Math.random() * 9 + 1) * Math.pow(10, num - 1)
+        );
+      };
+      const getSign = (params) => {
+        const stime = Date.now();
+        const nonce = getRandomNonce(20).toString();
+        params.stime = stime;
+        params.nonce = nonce;
+        params.key = keyToken;
+        params.v = "v1";
+        var sortKeys = [];
+
+        for (const key in params) {
+          if (key !== "sign") {
+            sortKeys.push(key);
+          }
+        }
+        sortKeys.sort();
+        let paramsHolder = "";
+        sortKeys.forEach((key) => {
+          paramsHolder += key + params[key];
+        });
+
+        params.sign = md5(paramsHolder).toString();
+        console.log(params);
+
+        return "?" + new URLSearchParams(params).toString();
+      };
+      getSign("manu");
+      const getData = async () => {
+        try {
+          const response = await fetch(
+            `http://localhost:5000/api/replay${getSign({
+              club: "manu",
+            })}`
+          );
+
+          const result = await response.json();
+          console.log(result);
+        } catch (err) {
+          console.log(err);
+        }
+      };
+
+      getData();
+    </script>
+  </body>
+</html>
