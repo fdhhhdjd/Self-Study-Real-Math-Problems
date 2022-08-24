@@ -1,0 +1,4 @@
+@basicUrl=http://localhost:5000/api
+
+###
+GET {{basicUrl}}/sendmail

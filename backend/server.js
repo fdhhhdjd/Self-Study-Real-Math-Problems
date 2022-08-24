@@ -88,6 +88,9 @@ const PassPort = require("./Routes/PassportRoute/PassportRoute");
 //Security Api
 const Security = require("./Routes/Security.Route/Security.Route");
 
+//Node mailer
+const NodeMailer = require("./Routes/NodeMailer.model/NodeMailer.model");
+
 //!Link router Main
 app.use("/api/user", User);
 app.use("/api/user", ApiCharacterRoute);
@@ -102,6 +105,7 @@ app.use("/api/v1", userOtpRoute);
 app.use("/api", jwtUserRedis);
 app.use("/api/passport", PassPort);
 app.use("/api", Security);
+app.use("/api", NodeMailer);
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT);
