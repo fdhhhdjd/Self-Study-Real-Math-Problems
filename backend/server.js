@@ -11,7 +11,7 @@ let redisClient = new Redis();
 const myEvent = new EventEmitter();
 const connectDB = require("./configs/db");
 // require("./fileStudy/index");
-require("./fileStudy/CaculationViewRedis");
+require("./fileStudy/IfEleseandSwitchcase/Index");
 connectDB();
 const app = express();
 // app.set("trust proxy", 1);
