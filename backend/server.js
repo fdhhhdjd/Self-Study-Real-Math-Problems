@@ -11,7 +11,9 @@ let redisClient = new Redis();
 const myEvent = new EventEmitter();
 const connectDB = require("./configs/db");
 // require("./fileStudy/index");
-require("./fileStudy/IfEleseandSwitchcase/Index");
+// require("./fileStudy/IfEleseandSwitchcase/Index");
+require("./fileStudy/HanderError/HanderError");
+
 connectDB();
 const app = express();
 // app.set("trust proxy", 1);
