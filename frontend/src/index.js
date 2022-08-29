@@ -9,13 +9,13 @@ import "react-user-onboarding/dist/index.css";
 import "intro.js/introjs.css";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
-    <DataProvider>
-      <Router>
-        <App />
-      </Router>
-    </DataProvider>
-  </React.StrictMode>
+  // <React.StrictMode>
+  <DataProvider>
+    <Router>
+      <App />
+    </Router>
+  </DataProvider>
+  // </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function

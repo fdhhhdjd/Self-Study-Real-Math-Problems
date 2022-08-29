@@ -1,5 +1,6 @@
 import React from "react";
 import { Route, Routes } from "react-router-dom";
+import IntanceToken from "./Components/intanceToken/IntanceToken";
 import Cropper from "./Pages/Cropper/Cropper";
 import DownLoad from "./Pages/DownLoad/DownLoad";
 import Home from "./Pages/Home";
@@ -19,6 +20,8 @@ const App = () => {
         <Route path="/crop" element={<Cropper />} />
         //!React-User-Onboarding
         <Route path="/onboard" element={<Onboarding />} />
+        //! Check Accept Token before request
+        <Route path="/request" element={<IntanceToken />} />
       </Routes>
     </React.Fragment>
   );

@@ -11,7 +11,11 @@ let redisClient = new Redis();
 const myEvent = new EventEmitter();
 const connectDB = require("./configs/db");
 // require("./fileStudy/index");
+
+//!If else and Switch
 // require("./fileStudy/IfEleseandSwitchcase/Index");
+
+//! Handle error
 require("./fileStudy/HanderError/HanderError");
 
 connectDB();

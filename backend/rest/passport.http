@@ -9,3 +9,6 @@ Content-Type: application/json
 
 ###
 GET http://localhost:5000/api/passport/profile
+
+###
+GET http://localhost:5000/api/logins
