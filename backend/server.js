@@ -21,6 +21,10 @@ require("./fileStudy/HanderError/HanderError");
 //! Change Voice Speak
 // require("./fileStudy/ChageVoiceSpeek/ChangeVoice");
 
+//! Design Patterns
+//* Strategy pattern */
+require("./fileStudy/Design-Patterns/Strategy-pattern/StrategyPattern");
+
 connectDB();
 const app = express();
 // app.set("trust proxy", 1);

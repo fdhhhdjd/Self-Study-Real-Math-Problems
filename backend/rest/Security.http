@@ -2,3 +2,8 @@
 
 ###
 GET {{basicUrl}}/replay?club=manu&stime=0&nonce=50&sign=sign
+
+###
+GET {{basicUrl}}/get-session
+###
+GET {{basicUrl}}/set-session
