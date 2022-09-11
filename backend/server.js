@@ -25,6 +25,9 @@ require("./fileStudy/HanderError/HanderError");
 //* Strategy pattern */
 require("./fileStudy/Design-Patterns/Strategy-pattern/StrategyPattern");
 
+//* Observer pattern */
+require("./fileStudy/Design-Patterns/Observer-pattern/Observer.pattern");
+
 connectDB();
 const app = express();
 // app.set("trust proxy", 1);

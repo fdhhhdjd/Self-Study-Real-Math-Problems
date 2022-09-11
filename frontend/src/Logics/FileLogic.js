@@ -27,7 +27,7 @@ export const LogicAddTowArray = (arr1, arr2) => {
   });
   return d;
 };
-//Sort increase
+//!Sort increase
 export const HandleIncreaseSort = () => {
   const array = [0, 25, 9, 6, 8, 5, 7, 1, 16];
   var tempt;
@@ -42,7 +42,7 @@ export const HandleIncreaseSort = () => {
   }
   // console.log(array);
 };
-//Sort increase
+//!Sort increase
 export const HandleDecreaseSort = () => {
   const array = [0, 25, 9, 6, 8, 5, 7, 1, 16];
   var tempt;
@@ -57,3 +57,26 @@ export const HandleDecreaseSort = () => {
   }
   // console.log(array);
 };
+
+//!bubbleSort
+export const bubbleSort = (arr) => {
+  //check if swap => continue; else => break
+  let noSwaps;
+  for (let i = arr.length; i > 0; i--) {
+    noSwaps = true;
+    for (let j = 0; j < i - 1; j++) {
+      console.log(arr, arr[j], arr[j + 1]);
+      if (arr[j] > arr[j + 1]) {
+        let temp = arr[j];
+        arr[j] = arr[j + 1];
+        arr[j + 1] = temp;
+        noSwaps = false;
+      }
+    }
+    console.log("one round pass");
+    if (noSwaps) break;
+  }
+
+  return arr;
+};
+//

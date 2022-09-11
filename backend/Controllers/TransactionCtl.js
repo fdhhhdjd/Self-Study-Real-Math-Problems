@@ -35,8 +35,8 @@ const TransactionCtrl = {
         { session, new: true }
       );
       console.log(`Account ${fromId} is:::`, amountFrom);
-      // //cộng vào cho tk nhận
-      // //Trừ tiền tk gửi
+      //cộng vào cho tk nhận
+      //Trừ tiền tk gửi
       const amountTo = await Money.findOneAndUpdate(
         {
           userId: +toId,

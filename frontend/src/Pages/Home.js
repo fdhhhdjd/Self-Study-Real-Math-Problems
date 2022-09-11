@@ -1,5 +1,9 @@
 import React, { useEffect } from "react";
-import { LogicAddTowArray, LogicSpliceString } from "../Logics/FileLogic";
+import {
+  LogicAddTowArray,
+  LogicSpliceString,
+  bubbleSort,
+} from "../Logics/FileLogic";
 
 const Home = () => {
   //!Cắt chuỗi [123,456,789]
@@ -45,6 +49,12 @@ const Home = () => {
     console.log(KeyGeneralA === KeyGeneralB);
   };
 
+  //!bubbleSort
+
+  const handleBubbleSort = () => {
+    var a = [1, 6, 9, 2, 4, 3];
+    console.log(bubbleSort(a));
+  };
   useEffect(() => {
     //?Study 1
     // handleSpliceString();
@@ -52,6 +62,7 @@ const Home = () => {
     // handleTowArray();
     //?Study 3
     // handlePrivateHacker();
+    // handleBubbleSort();
   }, []);
   return <div>Home</div>;
 };

@@ -18,4 +18,4 @@ const getPriceStrate = {
 function getPrice(originalPrice, typePromotion) {
   return getPriceStrate[typePromotion](originalPrice);
 }
-console.log("--->>>", getPrice(200, "default"));
+// console.log("--->>>", getPrice(200, "default"));
