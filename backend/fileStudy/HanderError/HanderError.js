@@ -42,7 +42,7 @@ async function getData() {
   }
   [err, result] = await await handleRequest(request("b"));
   if (err) {
-    console.error(`Error ret2::`, err);
+    // console.error(`Error ret2::`, err);
   }
 }
 

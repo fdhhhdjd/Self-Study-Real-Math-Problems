@@ -1,8 +1,10 @@
 const IOREDIS = require("ioredis");
-const { REDIS_PORT, REDIS_HOST } = process.env;
+const { REDIS_PORT, REDIS_HOST, REDIS_PASSWORD } = process.env;
 const REDIS = new IOREDIS({
   port: REDIS_PORT,
   host: REDIS_HOST,
+  // password: REDIS_PASSWORD,
+  // tls: {},
 });
 
 REDIS.on("connect", () => {

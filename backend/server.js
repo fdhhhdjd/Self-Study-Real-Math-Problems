@@ -10,6 +10,7 @@ const EventEmitter = require("events");
 let redisClient = new Redis();
 const myEvent = new EventEmitter();
 const connectDB = require("./configs/db");
+const REDIS_IO = require("./configs/redis");
 // require("./fileStudy/index");
 
 //!If else and Switch
@@ -28,6 +29,11 @@ require("./fileStudy/Design-Patterns/Strategy-pattern/StrategyPattern");
 //* Observer pattern */
 require("./fileStudy/Design-Patterns/Observer-pattern/Observer.pattern");
 
+//* Facede pattern */
+require("./fileStudy/Design-Patterns/Facade-pattern/Facade-pattern");
+
+//* Facede pattern */
+require("./fileStudy/Design-Patterns/Proxy-Patterns/proxy-patterns");
 connectDB();
 const app = express();
 // app.set("trust proxy", 1);
@@ -57,7 +63,9 @@ app.use(cors());
 app.use(passport.initialize());
 // persistent login sessions
 app.use(passport.session());
-app.get("/", (req, res) => {
+app.get("/", async (req, res) => {
+  const data = await REDIS_IO.get("name");
+  console.log(data);
   const healthcheck = {
     uptime: process.uptime(),
     message: "Tài Đẹp trai ",

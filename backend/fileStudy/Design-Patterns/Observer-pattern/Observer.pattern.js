@@ -6,7 +6,7 @@ class Observer {
     this.gotoHelp(location);
   }
   gotoHelp(location) {
-    console.log(`${this.namePick}:::::Ping::: ${JSON.stringify(location)}`);
+    // console.log(`${this.namePick}:::::Ping::: ${JSON.stringify(location)}`);
   }
 }
 class Subject {
