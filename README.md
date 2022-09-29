@@ -7,7 +7,7 @@
 <a href = "mailto:nguyentientai10@gmail.com"><img src="https://img.icons8.com/fluency/48/000000/send-mass-email.png" alt="License"></a>
 </p>
 
-# Self-Study-Real-Math-Problems
+# Self-Study-Real-Math-Problems.
 Nodejs,Express,Redis,...
 
 ## Giải quyết những vấn đề thực tế trên chiến trường.
