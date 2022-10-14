@@ -1,6 +1,6 @@
 class Leader {
   receiveRequest(offer) {
-    console.log(`Boss said: Ok ::${offer}`);
+    // console.log(`Boss said: Ok ::${offer}`);
   }
 }
 

@@ -7,10 +7,18 @@ const passport = require("passport");
 const Redis = require("ioredis");
 let RedisStore = require("connect-redis")(session);
 const EventEmitter = require("events");
+var schedule = require("node-schedule");
+const cluster = require("cluster");
+const os = require("os");
 let redisClient = new Redis();
 const myEvent = new EventEmitter();
 const connectDB = require("./configs/db");
 const REDIS_IO = require("./configs/redis");
+const Schedule = require("./Controllers/node_schedule/Schedule");
+const { sendEmailGrid } = require("./Controllers/sendEmailGird/SendGird");
+require("./Controllers/upload_google_drive/Gooogle_Drive");
+// const backupMongoDB = require("./Controllers/backup_mongo/backup_mongo");
+const numCpu = os.cpus().length;
 // require("./fileStudy/index");
 
 //!If else and Switch
@@ -22,6 +30,17 @@ require("./fileStudy/HanderError/HanderError");
 //! Change Voice Speak
 // require("./fileStudy/ChageVoiceSpeek/ChangeVoice");
 
+//! Schedule
+Schedule();
+
+//! Schedule
+// sendEmailGrid();
+
+//! Backup Mongo
+// backupMongoDB();
+
+//! Google drive
+require("./Controllers/upload_google_drive/Gooogle_Drive");
 //! Design Patterns
 //* Strategy pattern */
 require("./fileStudy/Design-Patterns/Strategy-pattern/StrategyPattern");
@@ -34,7 +53,9 @@ require("./fileStudy/Design-Patterns/Facade-pattern/Facade-pattern");
 
 //* Facede pattern */
 require("./fileStudy/Design-Patterns/Proxy-Patterns/proxy-patterns");
+
 connectDB();
+
 const app = express();
 // app.set("trust proxy", 1);
 // trust first proxy
@@ -64,13 +85,13 @@ app.use(passport.initialize());
 // persistent login sessions
 app.use(passport.session());
 app.get("/", async (req, res) => {
-  const data = await REDIS_IO.get("name");
-  console.log(data);
   const healthcheck = {
     uptime: process.uptime(),
-    message: "Tài Đẹp trai ",
+    message: `Tài Đẹp trai ${process.pid} `,
     timestamp: Date.now(),
+    // cluster: cluster.worker.kill(),
   };
+
   return res.send(healthcheck);
 });
 //Listener event
@@ -130,7 +151,21 @@ app.use("/api", jwtUserRedis);
 app.use("/api/passport", PassPort);
 app.use("/api", Security);
 app.use("/api", NodeMailer);
-
+//Cluster
+// if (cluster.isMaster) {
+//   for (let i = 0; i < numCpu; i++) {
+//     cluster.fork();
+//   }
+//   cluster.on("exit", (worker, code, signal) => {
+//     console.log(`${worker.process.pid} died`);
+//     cluster.fork();
+//   });
+// } else {
+//   const PORT = process.env.PORT || 5000;
+//   app.listen(PORT);
+//   console.log(`Running on http://localhost:${PORT}`);
+// }
+// No cluster
 const PORT = process.env.PORT || 5000;
 app.listen(PORT);
 console.log(`Running on http://localhost:${PORT}`);
