@@ -6,6 +6,7 @@
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
+    "algoliasearch": "^4.14.2",
     "axios": "^0.27.2",
     "intro.js": "^6.0.0",
     "intro.js-react": "^0.6.0",
@@ -13,10 +14,16 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-image-crop": "8.6.12",
+    "react-instantsearch": "^6.38.0",
+    "react-instantsearch-dom": "^6.38.0",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
     "react-user-onboarding": "0.0.3",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "@algolia/autocomplete-js": "1.7.3",
+    "@algolia/autocomplete-plugin-query-suggestions": "1.7.3",
+    "@algolia/autocomplete-plugin-recent-searches": "1.7.3",
+    "@algolia/autocomplete-theme-classic": "1.7.3"
   },
   "scripts": {
     "start": "react-scripts start",

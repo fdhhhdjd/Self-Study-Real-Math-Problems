@@ -4,6 +4,8 @@ import {
   LogicSpliceString,
   bubbleSort,
 } from "../Logics/FileLogic";
+import Algolia from "./algolia/Algolia";
+import AlgoliaSameGoogle from "./algolia/AlgoliaSameGoogle";
 
 const Home = () => {
   //!Cắt chuỗi [123,456,789]
@@ -64,7 +66,10 @@ const Home = () => {
     // handlePrivateHacker();
     // handleBubbleSort();
   }, []);
-  return <div>Home</div>;
+  return <div>
+    <Algolia />
+    {/* <AlgoliaSameGoogle /> */}
+  </div>;
 };
 
 export default Home;

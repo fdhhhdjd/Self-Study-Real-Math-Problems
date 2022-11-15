@@ -54,6 +54,12 @@ require("./fileStudy/Design-Patterns/Facade-pattern/Facade-pattern");
 //* Facede pattern */
 require("./fileStudy/Design-Patterns/Proxy-Patterns/proxy-patterns");
 
+
+//*V2 Algorithm
+require("./v2/Controllers/algorithm/LRU/LRU");
+
+//*V2 SOLID
+require("./v2/Controllers/SOLID/s");
 connectDB();
 
 const app = express();
